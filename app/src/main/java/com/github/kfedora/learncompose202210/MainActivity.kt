@@ -56,18 +56,18 @@ fun RenderMainComposable(name: String = "Beyonce") {
                     .size(80.dp)
                     .padding(2.dp)
             )
-        Spacer(modifier = Modifier.width(8.dp))
+    }
+    Row {
         Column {
             Text(text = "When no one is around you...")
             Greeting(name)
         }
-        Row {
-            Image(
-                painter = painterResource(id = R.drawable.arielviewofkathmandu_3_2092022091959),
-                contentDescription = "Kathmandu from above",
-                modifier = Modifier
-                    .padding(2.dp)
-            )
-        }
     }
+    Spacer(modifier = Modifier.width(300.dp))
+    Image(
+        painter = painterResource(id = R.drawable.arielviewofkathmandu_3_2092022091959),
+        contentDescription = "Kathmandu from above",
+        modifier = Modifier
+            .padding(2.dp)
+    )
 }
