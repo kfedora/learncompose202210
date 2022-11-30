@@ -37,7 +37,7 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = false)
 @Composable
 fun DefaultPreview() {
     LearnJetpackComposeOctober2022Theme {
@@ -48,26 +48,32 @@ fun DefaultPreview() {
 @Preview(showBackground = true)
 @Composable
 fun RenderMainComposable(name: String = "Beyonce") {
-    Row {
+    Column {
+        Row {
             Image(
                 painter = painterResource(id = R.drawable.arielviewofkathmandu_1_2092022091946),
                 contentDescription = "Kathmandu from above",
                 modifier = Modifier
                     .size(80.dp)
-                    .padding(2.dp)
+                    .padding(20.dp)
             )
-    }
-    Row {
-        Column {
-            Text(text = "When no one is around you...")
-            Greeting(name)
+            Spacer(modifier = Modifier.width(10.dp))
+            Row {
+                Column {
+                    Text(text = "When no one is around you, say baby I love you " +
+                            "if you ain't running game. " +
+                            "You're acting kind of shady and calling me baby " +
+                            "why the sudden change?...")
+                    Greeting(name)
+                }
+            }
         }
+        Spacer(modifier = Modifier.width(300.dp))
+        Image(
+            painter = painterResource(id = R.drawable.arielviewofkathmandu_3_2092022091959),
+            contentDescription = "Kathmandu from above",
+            modifier = Modifier
+                .padding(2.dp)
+        )
     }
-    Spacer(modifier = Modifier.width(300.dp))
-    Image(
-        painter = painterResource(id = R.drawable.arielviewofkathmandu_3_2092022091959),
-        contentDescription = "Kathmandu from above",
-        modifier = Modifier
-            .padding(2.dp)
-    )
 }
